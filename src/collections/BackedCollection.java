@@ -1,11 +1,16 @@
 package collections;
 
+import java.math.BigDecimal;
+import java.util.HashMap;
 import java.util.SortedMap;
 import java.util.TreeMap;
 
 public class BackedCollection {
     public static void main(String[] args) {
         TreeMap<String, String> map = new TreeMap<String, String>();
+        HashMap<String, Integer> hash = new HashMap<String, Integer>();
+        hash.put("FB", 1);
+        hash.put("Ea", 1);
         map.put("a", "ant");
         map.put("d", "dog");
         map.put("h", "horse");
@@ -24,5 +29,9 @@ public class BackedCollection {
         submap.put("ha", "gireafe");
         System.out.println(map + " map--------"); // #7 show final contents
         System.out.println(submap+"submap--------"); // #7 show final contents
+        
+        BigDecimal a = new BigDecimal(1);
+        BigDecimal b = new BigDecimal(0.2f);
+        System.out.println(a.subtract(b));
     }
 }

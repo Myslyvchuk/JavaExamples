@@ -1,23 +1,19 @@
 package inheritance;
 
-import java.util.ArrayList;
-import java.util.List;
+public class Cat {
+    public Animal animal = new Animal();
 
-public class Cat extends Animal {
-    public Cat(int a){
-       super(a);
+    public void a(){
+        animal.a();
     }
-    Animal a = new Animal(4);
-    public static void main(String[] args){
-        List<Animal> animal = new ArrayList<Animal>();
-        animal.add(new Animal(5));
-        List<Cat> cat = new ArrayList<Cat>();
-        cat.add(new Cat(4));
-        recieveCollection(animal);
-        recieveCollection(cat);
+    private void b(){
+        animal.b();
     }
-    
-    public static void recieveCollection(List<? super Cat> list){
-        
+
+    public static void main(String[] args) {
+        Cat cat = new Cat();
+        cat.a();
+        cat.b();
     }
+
 }
