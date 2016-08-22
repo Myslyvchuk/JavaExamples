@@ -1,6 +1,8 @@
 package innerClasses;
 
-class InnerClasses {
+import inheritance.Animal;
+
+class InnerClasses extends Animal implements AnonymousInterface {
     private String x = "Outer";
     private static String OUTER_STATIC = "Outer Static";
 
@@ -14,12 +16,11 @@ class InnerClasses {
 
     // Local
     void doStuff() {
-        class MyInner {  // NO STATIC methods
+        class MyInner {  // NO STATIC methods no static fields
             @SuppressWarnings("unused")
             private String x = "Local";
-
             public void seeOuter() {
-                System.out.println("Outer x is " + InnerClasses.this.x);
+                System.out.println("Outer x is " + InnerClasses.this.x + OUTER_STATIC);
             }
             // static void go(){ }  
             
@@ -29,19 +30,19 @@ class InnerClasses {
     }
 
     // Inner
-    class Inner { // NO STATIC methods
+    class Inner { // NO STATIC methods and No static field inside
         private String x = "Inner";
 
         public void seeInner() {
             System.out.println("Outer x is " + x);
         }
+        
         //static void go(){ }  
     }
 
     // Nested
-    static class Nested {
+    static class Nested { //all static
         private String x = "Nested";
-        private static String OUTER_STATIC = "Outer Static";
 
         public void seeNested() {
             System.out.println("Outer x is " + x);
@@ -51,6 +52,10 @@ class InnerClasses {
             System.out.println("Outer x is " + OUTER_STATIC);
         }
     }
+    //Anonymous
+    AnonymousInterface anonimous = new AnonymousInterface(){ // no static inside, could reach static outer
+        String a = OUTER_STATIC;
+    };
 
     public static void main(String[] args) {
         // Local
@@ -65,6 +70,7 @@ class InnerClasses {
         InnerClasses.Nested nested = new InnerClasses.Nested();
         nested.seeNested();
         InnerClasses.Nested.returnSmth();
+        //Anonymous
         InnerClasses sun = new InnerClasses() {
             public void returnSmthNonStatic() {
                 System.out.println("Anon x is " + OUTER_STATIC);
@@ -77,6 +83,8 @@ class InnerClasses {
         System.out.println(a = a | true);
         System.out.println(a);
         System.out.println(0x0 | 0x00000010);
+        Animal animal = new Animal();
+        System.out.println(animal.animalInt);
 
     }
 

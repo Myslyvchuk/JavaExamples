@@ -2,18 +2,24 @@ package collections;
 
 import java.math.BigDecimal;
 import java.util.HashMap;
+import java.util.Hashtable;
+import java.util.LinkedHashMap;
+import java.util.LinkedHashSet;
+import java.util.Set;
 import java.util.SortedMap;
 import java.util.TreeMap;
 
 public class BackedCollection {
     public static void main(String[] args) {
         TreeMap<String, String> map = new TreeMap<String, String>();
-        HashMap<String, Integer> hash = new HashMap<String, Integer>();
+        HashMap<String, Integer> hash = new LinkedHashMap<String, Integer>();
+        Hashtable<String, Integer> hashTable = new Hashtable<String, Integer>();
         hash.put("FB", 1);
-        hash.put("Ea", 1);
+        hash.put(null, 1);
         map.put("a", "ant");
         map.put("d", "dog");
         map.put("h", "horse");
+        hashTable.put("Ea", 1);
         System.out.println(map +"0--------" );
         SortedMap<String, String> submap;
         submap = map.subMap("a", "z"); // #1 create a backed collection RANGE ON KEY FROM B-M
@@ -33,5 +39,9 @@ public class BackedCollection {
         BigDecimal a = new BigDecimal(1);
         BigDecimal b = new BigDecimal(0.2f);
         System.out.println(a.subtract(b));
+        
+        Set<String> set = new LinkedHashSet<String>();
+        set.add("FB");
+        set.add("Ea");
     }
 }

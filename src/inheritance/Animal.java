@@ -37,7 +37,7 @@ public class Animal {
     // + super.toString() + "]";
     // }
     public void a() {
-
+        System.out.println("Animal");
     }
 
     public void b() {
@@ -46,5 +46,17 @@ public class Animal {
 
     public void c() {
 
+    }
+
+   public int animalInt = 10;
+
+    public String tryOverloading() {
+        System.out.println("Overloading Animal");
+        return "";
+    }
+
+    public String tryOverriding() {
+        System.out.println("Overriding Animal");
+        return "";
     }
 }
