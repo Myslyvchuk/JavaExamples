@@ -2,40 +2,10 @@ package inheritance;
 
 public class Animal {
 
-    // private int age;
-    //
-    // Animal(int age) {
-    // this.age = age;
-    // }
-    //
-    // @Override
-    // public int hashCode() {
-    // final int prime = 31;
-    // int result = 1;
-    // result = prime * result + age;
-    // return result;
-    // }
-    //
-    // @Override
-    // public boolean equals(Object obj) {
-    // if (this == obj)
-    // return true;
-    // if (obj == null)
-    // return false;
-    // if (getClass() != obj.getClass())
-    // return false;
-    // Animal other = (Animal) obj;
-    // if (age != other.age)
-    // return false;
-    // return true;
-    // }
-    //
-    // @Override
-    // public String toString() {
-    // return "Animal [age=" + age + ", hashCode()=" + hashCode() + ",
-    // getClass()=" + getClass() + ", toString()="
-    // + super.toString() + "]";
-    // }
+    int intValue;
+    static int staticIntValue;
+    protected int portectedInherit = 10;
+  
     public void a() {
         System.out.println("Animal");
     }
@@ -58,5 +28,28 @@ public class Animal {
     public String tryOverriding() {
         System.out.println("Overriding Animal");
         return "";
+    }
+    public static void main(String[] args ){
+        Animal an= new Animal();
+        System.out.println(an.intValue);
+        System.out.println(staticIntValue);
+        System.out.println(Integer.MAX_VALUE + Integer.MAX_VALUE);
+        System.out.println(-10%3);
+        String a = new String("S");
+        String b = a;
+        System.out.println(a==b);
+        System.out.println(a.equals(b));
+        
+        int dayOfWeek = 0;
+        switch(dayOfWeek) {
+        case 0:
+        System.out.println("Sunday");
+        default:
+        System.out.println("Weekday");
+        break;
+        case 6:
+        System.out.println("Saturday");
+        
+        }
     }
 }

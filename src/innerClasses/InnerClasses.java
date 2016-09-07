@@ -6,7 +6,7 @@ class InnerClasses extends Animal implements AnonymousInterface {
     private String x = "Outer";
     private static String OUTER_STATIC = "Outer Static";
 
-    public void returnSmthNonStatic() {
+    private void returnSmthNonStatic() {
         System.out.println("Outer x is " + OUTER_STATIC);
     }
 
@@ -21,6 +21,8 @@ class InnerClasses extends Animal implements AnonymousInterface {
             private String x = "Local";
             public void seeOuter() {
                 System.out.println("Outer x is " + InnerClasses.this.x + OUTER_STATIC);
+                returnSmth();
+                returnSmthNonStatic();
             }
             // static void go(){ }  
             
@@ -85,7 +87,7 @@ class InnerClasses extends Animal implements AnonymousInterface {
         System.out.println(0x0 | 0x00000010);
         Animal animal = new Animal();
         System.out.println(animal.animalInt);
-
+    
     }
 
 }
