@@ -38,7 +38,7 @@ public class BackedCollection {
         
         BigDecimal a = new BigDecimal(1);
         BigDecimal b = new BigDecimal(0.2f);
-        System.out.println(a.subtract(b));
+
         
         Set<String> set = new LinkedHashSet<String>();
         set.add("FB");
