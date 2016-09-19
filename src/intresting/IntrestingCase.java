@@ -66,10 +66,8 @@ public class IntrestingCase {
 				System.out.print(num + " ");
 			System.out.println();
 		}
-		
 		System.out.println(LocalDate.now());
 		System.out.println(LocalTime.now());
-		
 		System.out.println(LocalDateTime.now());
 	}
 
