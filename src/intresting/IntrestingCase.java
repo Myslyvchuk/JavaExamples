@@ -1,8 +1,9 @@
 package intresting;
 
-import java.time.LocalDate;
 import java.time.LocalDateTime;
-import java.time.LocalTime;
+import java.time.Period;
+import java.time.format.DateTimeFormatter;
+import java.time.format.FormatStyle;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -66,6 +67,29 @@ public class IntrestingCase {
 				System.out.print(num + " ");
 			System.out.println();
 		}
+
+		String a = "";
+		a += 2;
+		a += 'c';
+		a += false;
+		if (a == "2cfalse")
+			System.out.println("true");
+
+		String s = "Hello";
+		if ("Hello" == s)
+			System.out.println("true");
+
+		int total = 0;
+		StringBuilder letters = new StringBuilder("abcdefg");
+		 total += letters.substring(1, 2).length();
+		 total += letters.substring(6, 6).length();
+		// total += letters.substring(6, 5).length();
+		 LocalDateTime d = LocalDateTime.of(2015, 5, 10, 11, 22, 33);
+		 Period p = Period.ofDays(1).ofYears(2);
+		 d = d.minus(p);
+		 DateTimeFormatter f = DateTimeFormatter.ofLocalizedDateTime(FormatStyle
+		 .SHORT);
+		 System.out.println(f.format(d));
 	}
 
 }
