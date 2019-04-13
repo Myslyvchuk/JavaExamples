@@ -1,4 +1,5 @@
-public class Empty {
+package nullrefererence.staticmethod;
+public class NullReferenceStaticMethod {
 	public static void swing() {
 		System.out.print("swing ");
 	}
@@ -13,9 +14,11 @@ public class Empty {
 	}
 
 	public static void main(String[] args) {
-		Empty rope = new Empty();
+		NullReferenceStaticMethod rope = new NullReferenceStaticMethod();
+		rope.climb();
 		rope.play();
-		Empty rope2 = null;
+		NullReferenceStaticMethod.play();
+		NullReferenceStaticMethod rope2 = null;
 		rope2.play();
 	}
 }

@@ -1,12 +1,12 @@
 package reflection;
 
-public class Singleton {
+public final class Singleton {
 
-    private void print(){
-        System.out.println("Singleton print");
-    }
-    
-    private Singleton(){
-        
+    private static Singleton singleton = new Singleton();
+
+    private Singleton(){}
+
+    public static Singleton getInstance(){
+        return singleton;
     }
 }

@@ -1,21 +1,19 @@
 package collections;
 
 import java.math.BigDecimal;
-import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.Hashtable;
 import java.util.LinkedHashMap;
 import java.util.LinkedHashSet;
-import java.util.List;
+import java.util.Map;
 import java.util.Set;
 import java.util.SortedMap;
 import java.util.TreeMap;
 
 public class BackedCollection {
 	public static void main(String[] args) {
-		TreeMap<String, String> map = new TreeMap<String, String>();
-		HashMap<String, Integer> hash = new LinkedHashMap<String, Integer>();
-		Hashtable<String, Integer> hashTable = new Hashtable<String, Integer>();
+	  TreeMap<String, String> map = new TreeMap<String, String>();
+		Map<String, Integer> hash = new LinkedHashMap<String, Integer>();
+		Map<String, Integer> hashTable = new Hashtable<String, Integer>();
 		hash.put("FB", 1);
 		hash.put(null, 1);
 		map.put("a", "ant");
