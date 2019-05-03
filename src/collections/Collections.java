@@ -12,6 +12,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 import java.util.Stack;
+import java.util.TreeMap;
 import java.util.TreeSet;
 import java.util.Vector;
 
@@ -42,6 +43,35 @@ public class Collections {
         // Map<Object, Object> treeMap = new TreeMap<Object, Object>();
         // // System.out.println("treeMap " + getTimeMsOfInsert(treeMap));
 
+        // null insertion and read - NPE it is not allowed to put null in map or set
+        List<String> arrayString = new ArrayList<>();
+        addToCollection(arrayString);
+        List<String> linkedString = new LinkedList<>();
+        addToCollection(linkedString);
+//        Set<String> hashSetString = new HashSet<>();
+//        addToCollection(hashSetString);
+//        Set<String> linkedHashSetString = new LinkedHashSet<>();
+//        addToCollection(linkedHashSetString);
+//        Set<String> treeSetString = new TreeSet<>();
+//        addToCollection(treeSetString);
+//        Map<String, Object> hashMapString = new HashMap<>();
+//        addToMap(hashMapString);
+//        Map<String, Object> linkedHashMapString = new LinkedHashMap<>();
+//        addToMap(linkedHashMapString);
+//        Map<String, Object> treeMapString = new TreeMap<>();
+//        addToMap(treeMapString);
+    }
+
+    private static void addToMap(Map<String, Object> hashMapString) {
+        hashMapString.put(null, null);
+        hashMapString.put(null, null);
+        hashMapString.put("key", null);
+    }
+
+    private static void addToCollection(Collection<String> linkedHashSetString) {
+        linkedHashSetString.add(null);
+        linkedHashSetString.add(null);
+        linkedHashSetString.add("value");
     }
 
     public static long getTimeMsOfInsert(Collection<? super Object> collection) {
